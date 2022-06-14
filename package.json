@@ -1,0 +1,18 @@
+{
+	"name": "KEL5-Final-Project",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"cloudinary": "^1.29.1",
+		"dotenv": "^16.0.0",
+		"cors": "^2.8.5",
+		"express": "^4.18.1",
+		"jsonwebtoken": "^8.5.1",
+		"pg": "^8.7.3",
+		"pg-hstore": "^2.3.4",
+		"sequelize": "^6.20.1",
+		"sequelize-cli": "^6.4.1"
+	}
+}

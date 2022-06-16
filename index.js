@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const formidable = require('express-formidable');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
@@ -14,12 +15,13 @@ const swaggerOption = {
 			contact: {
 				name: 'FWS 11 Kelompk 5 SHAP',
 			},
-			servers: ['http://locahost:5000'],
+			servers: ['https://localhost:5000'],
 		},
 	},
 	apis: ['./routes/routes.js'],
 };
 const swaggerDocs = swaggerJsDoc(swaggerOption)
+app.use(formidable());
 
 app.use(require('./routes/routes.js')) // &---- Routes ----
 app.use('/api-docs',swaggerUi.serve,

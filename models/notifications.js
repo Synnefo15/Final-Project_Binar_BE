@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Notifications.init(
 		{
-			id_user: DataTypes.STRING,
+			id_user: DataTypes.INTEGER,
 			notification: DataTypes.STRING,
 		},
 		{

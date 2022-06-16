@@ -9,7 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_user: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        references:{
+          model:'Users',
+          key:'id'
+        }
+        
       },
       notification: {
         type: Sequelize.STRING
@@ -23,6 +28,20 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    // await queryInterface.addConstraint('Notifications',{
+    //   fields:['id_user'],
+    //   type:'foreign key',
+    //   name:'id_user-fkey',
+    //   references:{
+    //     table:'Users',
+    //     field:'id'
+    //   },
+    //   onDelete:'cascade',
+    //   onUpdate:'cascade'
+    // })
+    // await queryInterface.changeColumn('Notifications','id_user',{
+    //   type:DataTypes.INTEGER
+    // })
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Notifications');

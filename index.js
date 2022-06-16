@@ -1,9 +1,20 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
 const swaggerJsDoc = require('swagger-jsdoc');
+const formidable = require('express-formidable');
 const swaggerUi = require('swagger-ui-express');
+const cors = require('cors');
 
 const port = process.env.PORT || 5000;
+
+// Load env variable
+dotenv.config();
+
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 // &---- Swagger ----
 const swaggerOption = {
@@ -21,6 +32,7 @@ const swaggerOption = {
 };
 const swaggerDocs = swaggerJsDoc(swaggerOption)
 
+app.use(formidable());
 app.use(require('./routes/routes.js')) // &---- Routes ----
 app.use('/api-docs',swaggerUi.serve,
         swaggerUi.setup(swaggerDocs)

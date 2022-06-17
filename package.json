@@ -20,6 +20,6 @@
 	},
 	"scripts": {
 		"start": "node index.js",
-		"run dev": "nodemon index.js"
+		"dev": "nodemon index.js"
 	}
 }

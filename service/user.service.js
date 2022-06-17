@@ -16,14 +16,14 @@ exports.createNewUser = async (payload) => {
 		const uploadFoto = await cloudinaryConfig.uploader.upload(payload.files.foto.path)
 		
 		const user = {
-			role_name:payload.fields.role_name,
-			email:payload.fields.email,
-			password:payload.fields.password,
-			hp:payload.fields.hp,
-			foto:uploadFoto.secure_url,
-			alamat:payload.fields.alamat,
-			
-		}
+			role_name: payload.fields.role_name,
+			email: payload.fields.email,
+			password: payload.fields.password,
+			hp: payload.fields.hp,
+			// foto:uploadFoto.secure_url,
+			foto: payload.fields.foto,
+			alamat: payload.fields.alamat,
+		};
 		return await userRepository.save(user)
 	} catch (err) {
 		console.log(err);

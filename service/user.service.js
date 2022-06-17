@@ -20,8 +20,7 @@ exports.createNewUser = async (payload) => {
 			email: payload.fields.email,
 			password: payload.fields.password,
 			hp: payload.fields.hp,
-			// foto:uploadFoto.secure_url,
-			foto: payload.fields.foto,
+			foto:uploadFoto.secure_url,
 			alamat: payload.fields.alamat,
 		};
 		return await userRepository.save(user)

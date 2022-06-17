@@ -1,4 +1,5 @@
 const userRepository = require('../repository/user.repository');
+const cloudinaryConfig = require('../config/cloudinary.config');
 
 const { user } = require('../models/index.js');
 
@@ -12,12 +13,14 @@ exports.findUserById = async (id) => {
 
 exports.createNewUser = async (payload) => {
 	try {
+		const uploadFoto = await cloudinaryConfig.uploader.upload(payload.files.foto.path)
+		
 		const user = {
 			role_name:payload.fields.role_name,
 			email:payload.fields.email,
 			password:payload.fields.password,
 			hp:payload.fields.hp,
-			foto:payload.fields.foto,
+			foto:uploadFoto.secure_url,
 			alamat:payload.fields.alamat,
 			
 		}
@@ -29,12 +32,14 @@ exports.createNewUser = async (payload) => {
 
 exports.updateUser = async (payload,ids) => {
 	try {
+		const uploadFoto = await cloudinaryConfig.uploader.upload(payload.files.foto.path)
+		
 		const user = {
 			role_name: payload.fields.role_name,
 			email: payload.fields.email,
 			password: payload.fields.password,
 			hp: payload.fields.hp,
-			foto: payload.fields.foto,
+			foto: uploadFoto.secure_url,
 			alamat: payload.fields.alamat,
 		};
 

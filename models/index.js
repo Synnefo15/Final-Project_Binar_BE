@@ -35,5 +35,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.products = require('./products.js')(sequelize, Sequelize);
+db.category = require('./category.js')(sequelize, Sequelize);
 
 module.exports = db;

@@ -34,13 +34,13 @@ exports.updateProduct = async(payload, ids) => {
         const imageUpload = await cloudinaryConfig.uploader.upload(payload.files.product_image.path);
 
         const product = {
-            id_user: payload.fields.id_user,
-            id_category: payload.fields.id_category,
-            product_name: payload.fields.product_name,
-            product_description: payload.fields.product_description,
-            price: payload.fields.price,
-            product_image: imageUpload.secure_url
-        };
+					id_user: payload.fields.id_user,
+					id_category: payload.fields.id_category,
+					product_name: payload.fields.product_name,
+					product_description: payload.fields.product_description,
+					price: payload.fields.price,
+					product_image: imageUpload.secure_url
+				};
 
         const productById = await productRepository.findById(ids);
 

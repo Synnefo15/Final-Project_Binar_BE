@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const productController = require('../controller/products.controller.js');
-const categoryController = require('../controller/category.controller.js');
+
 const cors = require('cors');
 
 var corsOptions = {
@@ -13,6 +12,8 @@ router.use(cors(corsOptions));
 
 const userController = require('../controller/users.controller');
 const transController = require('../controller/transaksi.controller');
+const productController = require('../controller/products.controller.js');
+const categoryController = require('../controller/category.controller.js');
 
 // &---- Routes index ----
 /**

@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const dotenv = require('dotenv');
 const swaggerJsDoc = require('swagger-jsdoc');
@@ -18,19 +18,21 @@ var corsOptions = {
 
 // &---- Swagger ----
 const swaggerOption = {
-	swaggerDefinition: {
-		info: {
-			title: 'E-commerce API SHAP',
-			description: 'E-commerce API Information Swagger',
-			contact: {
-				name: 'FWS 11 Kelompk 5 SHAP',
-			},
-			servers: ['https://localhost:5000'],
-		},
-	},
-	apis: ['./routes/routes.js'],
+  swaggerDefinition: {
+    info: {
+      title: "E-commerce API SHAP",
+      description: "E-commerce API Information Swagger",
+      contact: {
+        name: "FWS 11 Kelompk 5 SHAP",
+      },
+      servers: ["https://localhost:5000"],
+    },
+  },
+  apis: ["./routes/routes.js"],
 };
-const swaggerDocs = swaggerJsDoc(swaggerOption)
+const swaggerDocs = swaggerJsDoc(swaggerOption);
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
 app.use(formidable());
 
 app.use(formidable());
@@ -42,5 +44,5 @@ app.use('/api-docs',swaggerUi.serve,
 
 
 app.listen(port, () => {
-	console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });

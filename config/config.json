@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "rafi",
+    "username": "raka",
+    "password": "raka",
     "database": "Final-Project",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -14,16 +14,16 @@
     "dialect": "mysql"
   },
   "production": {
-		"username": "umagwxrtxuaxoy",
-		"password": "c0667107c8bb3292441b41b38706b60d8f98c82983accd0b849802330c45c336",
-		"database": "d1dkbnnqs9e323",
-		"host": "ec2-23-23-182-238.compute-1.amazonaws.com",
-		"dialect": "postgres",
-		"dialectOptions": {
-			"ssl": {
-				"require": true,
-				"rejectUnauthorized": false
-			}
-		}
-	}
+    "username": "umagwxrtxuaxoy",
+    "password": "c0667107c8bb3292441b41b38706b60d8f98c82983accd0b849802330c45c336",
+    "database": "d1dkbnnqs9e323",
+    "host": "ec2-23-23-182-238.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
 }

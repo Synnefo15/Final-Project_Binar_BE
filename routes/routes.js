@@ -1,5 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+
+
+
+
 
 const cors = require('cors');
 
@@ -9,11 +13,12 @@ var corsOptions = {
 }
 
 router.use(cors(corsOptions));
-
+const authController = require("../controller/auth.controller");
 const userController = require('../controller/users.controller');
 const transController = require('../controller/transaksi.controller');
 const productController = require('../controller/products.controller.js');
 const categoryController = require('../controller/category.controller.js');
+
 
 // &---- Routes index ----
 /**
@@ -25,8 +30,8 @@ const categoryController = require('../controller/category.controller.js');
  *       200:
  *         description: Returns a mysterious string.
  */
-router.get('/', (req, res) => {
-	res.status(200).send(`Default Page`);
+router.get("/", (req, res) => {
+  res.status(200).send(`Default Page`);
 });
 // PRODUCT ENDPOINTS
 router.get('/products', productController.findAllProductsApi);
@@ -44,11 +49,15 @@ router.put('/category/:id', categoryController.updateCategoryApi);
 router.delete('/category/:id', categoryController.deleteCategory);
 
 // &---- User ----
-router.get('/users/profile',userController.findAllUserApi)
-router.get('/users/profile/:id',userController.findUserByIdApi)
-router.post('/users/profile',userController.createNewUserApi)
-router.put('/users/profile/:id',userController.updateUserApi)
-router.delete('/users/profile/:id',userController.deleteCar)
+router.get("/users/profile", userController.findAllUserApi);
+router.get("/users/profile/:id", userController.findUserByIdApi);
+router.post("/users/profile", userController.createNewUserApi);
+router.put("/users/profile/:id", userController.updateUserApi);
+router.delete("/users/profile/:id", userController.deleteCar);
+
+// auth
+router.post("/auth/signup", authController.signup);
+router.post("/auth/signin", authController.signin);
 
 // &---- Transaksi ----
 router.get('/users/transaksi',transController.findAllTransApi)
@@ -60,6 +69,4 @@ router.delete('/users/transaksi/:id',transController.deleteTrans)
 
 
 
-
-
-module.exports = router
+module.exports = router;

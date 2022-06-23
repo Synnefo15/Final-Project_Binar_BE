@@ -31,9 +31,9 @@ exports.createNewTrans = async (payload) => {
 exports.updateTrans = async (payload, ids) => {
 	try {
 		const orderDate = new Date();
-		const day = orderDate.getUTCDate();
-		const month = orderDate.getUTCMonth() + 1;
-		const year = orderDate.getUTCFullYear();
+		// const day = orderDate.getUTCDate();
+		// const month = orderDate.getUTCMonth() + 1;
+		// const year = orderDate.getUTCFullYear();
 		const trans = {
 			id_user: payload.fields.id_user,
 			id_product: payload.fields.id_product,

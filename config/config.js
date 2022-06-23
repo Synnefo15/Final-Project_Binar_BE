@@ -1,8 +1,19 @@
-{
+require('dotenv').config;
+const {
+  DB_USERNAME_P ,
+DB_PASSWORD_P ,
+DB_DATABASE_P ,
+DB_HOST_P, 
+DB_USERNAME_D ,
+DB_PASSWORD_D ,
+DB_DATABASE_D
+} = process.env
+
+module.exports={
   "development": {
-    "username": "raka",
-    "password": "raka",
-    "database": "Final-Project",
+    "username": DB_USERNAME_D,
+    "password": DB_PASSWORD_D,
+    "database": DB_DATABASE_D,
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

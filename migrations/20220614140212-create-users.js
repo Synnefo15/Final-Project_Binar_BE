@@ -16,10 +16,13 @@ module.exports = {
 				allowNull: false,
 				unique: true,
 			},
+			// user_name:{
+			// 	type:Sequelize.STRING,
+
+			// },
 			password: {
 				type: Sequelize.STRING,
 				allowNull: false,
-				// unique: true,
 			},
 			hp: {
 				type: Sequelize.STRING,

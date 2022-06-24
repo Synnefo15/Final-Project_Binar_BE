@@ -13,6 +13,11 @@ module.exports = {
 				createdAt: new Date(),
 				updatedAt: new Date(),
 			},
+			{
+				category: 'Pakaian',
+				createdAt: new Date(),
+				updatedAt: new Date(),
+			},
 		]);
 	},
 

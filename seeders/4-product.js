@@ -5,7 +5,7 @@ module.exports = {
 		await queryInterface.bulkInsert('Products', [
 			{
 				id_user: 1,
-				id_category: 1,
+				id_category: 6,
 				product_name: 'radio bekas',
 				product_description: 'murah masih fungsi',
 				price: 1000,
@@ -15,7 +15,7 @@ module.exports = {
 			},
 			{
 				id_user: 2,
-				id_category: 2,
+				id_category: 7,
 				product_name: 'sepeda bekas',
 				product_description: 'murah masih fungsi',
 				price: 21000,

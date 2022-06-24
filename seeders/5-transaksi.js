@@ -5,14 +5,14 @@ module.exports = {
 		await queryInterface.bulkInsert('Transactions', [
 			{
 				id_user: 1,
-				id_product: 1,
+				id_product: 7,
 				order_date: new Date(),
 				createdAt: new Date(),
 				updatedAt: new Date(),
 			},
 			{
 				id_user: 2,
-				id_product: 2,
+				id_product: 8,
 				order_date: new Date(),
 				createdAt: new Date(),
 				updatedAt: new Date(),

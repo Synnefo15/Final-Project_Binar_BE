@@ -5,7 +5,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../config/config')[env];
 const db = {};
 
 let sequelize;
@@ -40,5 +40,11 @@ db.transactions = require('./transactions')(sequelize,Sequelize);
 db.products = require('./products')(sequelize,Sequelize);
 db.notifications = require('./notifications')(sequelize,Sequelize);
 db.category = require('./category')(sequelize,Sequelize);
+
+db.category.associate(db)
+db.products.associate(db)
+db.transactions.associate(db)
+db.users.associate(db)
+db.category.associate(db)
 
 module.exports = db;

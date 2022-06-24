@@ -1,8 +1,19 @@
 const db = require('../models/index');
 const Transaction = db.transactions;
+const Product = db.products
+const User = db.users
 
 exports.findAll = async () => {
-	return await Transaction.findAll();
+	return await Transaction.findAll({
+		include: [
+			{
+				model: Product,
+			},
+			{
+				model: User,
+			}
+		],
+	});
 };
 
 exports.findById = async (id) => {

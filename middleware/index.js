@@ -1,4 +1,4 @@
-const verifySignUp = require('./verifySignUp');
-module.exports = {
-	verifySignUp,
-};
+// const verifySignUp = require('./verifySignUp');
+// module.exports = {
+// 	verifySignUp
+// };

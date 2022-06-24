@@ -19,6 +19,7 @@ exports.createNewUser = async (payload) => {
 			role_name: payload.fields.role_name,
 			email: payload.fields.email,
 			password: payload.fields.password,
+			user_name:payload.fields.user_name,
 			hp: payload.fields.hp,
 			foto:uploadFoto.secure_url,
 			alamat: payload.fields.alamat,
@@ -36,6 +37,7 @@ exports.updateUser = async (payload,ids) => {
 		const user = {
 			role_name: payload.fields.role_name,
 			email: payload.fields.email,
+			user_name: payload.fields.user_name,
 			password: payload.fields.password,
 			hp: payload.fields.hp,
 			foto: uploadFoto.secure_url,

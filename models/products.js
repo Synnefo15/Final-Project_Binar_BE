@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
 			Products.belongsTo(models.Category, {
 				foreignKey: 'id_category',
 			});
-			Products.belongsTo(models.Transactions,{
-				foreignKey:'id_product'
+			Products.hasMany(models.Transactions,{
+				foreignKey:'id'
 			});
 			Products.belongsTo(models.Users,{
 				foreignKey:'id_user'

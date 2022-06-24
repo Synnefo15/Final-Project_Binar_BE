@@ -25,10 +25,10 @@ module.exports={
     "dialect": "mysql"
   },
   "production": {
-    "username": "umagwxrtxuaxoy",
-    "password": "c0667107c8bb3292441b41b38706b60d8f98c82983accd0b849802330c45c336",
-    "database": "d1dkbnnqs9e323",
-    "host": "ec2-23-23-182-238.compute-1.amazonaws.com",
+    "username": DB_USERNAME_P,
+    "password": DB_PASSWORD_P,
+    "database": DB_DATABASE_P,
+    "host": DB_HOST_P,
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": {

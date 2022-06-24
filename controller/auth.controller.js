@@ -7,7 +7,15 @@ var bcrypt = require("bcrypt");
 
 exports.signup = async (req, res) => {
   const user = await authService.signup(req);
-  res.status(201).json({ data: user });
+  res.status(201).send({
+		data: {
+			role_name: user.role_name,
+			email: user.email,
+			password: user.password,
+			createdAt: user.createdAt,
+			updatedAt: user.updatedAt,
+		},
+	});
 };
 
 exports.signin = async (req, res) => {

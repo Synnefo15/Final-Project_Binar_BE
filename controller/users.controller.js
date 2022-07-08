@@ -1,18 +1,18 @@
 const userService = require('../service/user.service.js');
 
 exports.findAllUserApi = async (req, res) => {
-	const users = await userService.findAllUsers();
+	const user = await userService.findAllUsers();
 
 	res.json({
-		data: users,
+		data: user,
 	});
 };
 
 exports.findUserByIdApi = async (req, res) => {
-	const users = await userService.findUserById(req.params.id);
+	const user = await userService.findUserById(req.params.id);
 
-	if (users != null) {
-		res.json({ data: users });
+	if (user != null) {
+		res.json({ data: user });
 	} else {
 		res.status(404).json({
 			error: `User dengan id${req.params.id} tidak ditemukan`,
@@ -35,12 +35,12 @@ exports.updateUserApi = async (req, res) => {
 };
 
 exports.deleteCar = async (req, res) => {
-	const userById = await userService.findUserById(req.params.id);
+	const user = await userService.findUserById(req.params.id);
 
-	if (userById == null) {
+	if (user == null) {
 		res.status(404).json({ error: `user dengan id ${req.params.id}` });
 	} else {
-		userService.deleteUser(userById);
+		userService.deleteUser(user);
 		res.json({ message: 'Delete berhasil' });
 	}
 };

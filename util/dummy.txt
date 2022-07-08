@@ -1,1 +1,1 @@
-Fungsi util
+Fungsi util belum implementasi

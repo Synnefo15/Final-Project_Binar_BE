@@ -29,13 +29,14 @@ exports.signin = async (req, res) => {
 				message: 'Invalid Password!',
 			});
 		}
-		var token = jwt.sign({ id: user.id }, config.secret, {
+		var token = jwt.sign({ id: user.id, role:user.role_name }, config.secret, {
 			expiresIn: 86400, // 24 hours
 		});
 		res.status(200).send({
 			id: user.id,
 			email: user.email,
 			accessToken: token,
+		
 		});
 	});
 };

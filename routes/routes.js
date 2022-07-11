@@ -3,6 +3,8 @@ const router = express.Router();
 
 const {verifySeller,verifyToken,verifyUser} = require('../middleware/verifyToken');
 
+const middleware = require('../middleware/middleware.js');
+
 
 
 const cors = require('cors');
@@ -36,7 +38,7 @@ router.get("/", (req, res) => {
 // PRODUCT ENDPOINTS
 router.get('/products', productController.findAllProductsApi);
 router.get('/products/:id', productController.findProductByIdApi);
-router.post('/products', productController.createNewProductApi);
+router.post('/products',middleware.authorizationToken ,productController.createNewProductApi);
 router.put('/products/:id', productController.updateProductApi);
 router.delete('/products/:id', productController.deleteProduct);
 
